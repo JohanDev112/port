@@ -31,7 +31,7 @@ const Profile = () => {
         alignItems="center"
         marginX="auto"
         padding={3}
-        bgcolor="#535C91"
+        bgcolor="#1F2A48"
         borderRadius={2}
         color={"#FFFFFF"}
         maxWidth={{ xs: "100%", sm: "80%" }}
@@ -49,10 +49,10 @@ const Profile = () => {
             Johan González
           </Typography>
           <Typography variant="body1" align="justify" gutterBottom>
-            Soy un estudiante de Ingeniería de software interesado en
-            desarrollar aplicaciones utilizando tecnologías modernas como
-            microservicios con NestJS y NextJS, así como aplicaciones móviles
-            con Expo y React Native utilizando TypeScript.
+            Estudiante de Ingeniería de software con conocimiento en desarrollo
+            de aplicaciones y web donde utilizo tecnologías modernas como React,
+            NextJS, Expo y React Native donde TypeScript es mi lenguaje
+            principal.
           </Typography>
 
           <Box

@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  Box,
-  Button,
-  TextField,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, TextField, Stack, Typography } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 
@@ -16,7 +10,10 @@ const Contact = () => {
 
   const handleWhatsApp = () => {
     const whatsappMessage = `Hola, soy ${name}. ${message}`;
-    window.open(`https://wa.me/5543670010?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
+    window.open(
+      `https://wa.me/5543670010?text=${encodeURIComponent(whatsappMessage)}`,
+      "_blank"
+    );
   };
 
   const handleEmail = () => {
@@ -32,7 +29,7 @@ const Contact = () => {
       sx={{
         marginTop: 4,
         padding: 3,
-        bgcolor: "#535C91",
+        bgcolor: "#1F2A48",
         borderRadius: 2,
         color: "#FFFFFF",
         maxWidth: { xs: "100%", sm: "80%" },
@@ -50,19 +47,19 @@ const Contact = () => {
           label="Nombre"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          InputLabelProps={{ style: { color: '#ffffff' } }}
+          InputLabelProps={{ style: { color: "#ffffff" } }}
           InputProps={{
-            style: { color: '#ffffff' },
+            style: { color: "#ffffff" },
             sx: {
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#FFFFFF", 
+                  borderColor: "#FFFFFF",
                 },
                 "&:hover fieldset": {
-                  borderColor: "#A8DADC", 
+                  borderColor: "#A8DADC",
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "#FFFFFF", 
+                  borderColor: "#FFFFFF",
                 },
               },
             },
@@ -75,19 +72,19 @@ const Contact = () => {
           label="Correo Electrónico"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          InputLabelProps={{ style: { color: '#ffffff' } }}
+          InputLabelProps={{ style: { color: "#ffffff" } }}
           InputProps={{
-            style: { color: '#ffffff' },
+            style: { color: "#ffffff" },
             sx: {
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#FFFFFF", 
+                  borderColor: "#FFFFFF",
                 },
                 "&:hover fieldset": {
-                  borderColor: "#A8DADC", 
+                  borderColor: "#A8DADC",
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "#FFFFFF", 
+                  borderColor: "#FFFFFF",
                 },
               },
             },
@@ -102,26 +99,31 @@ const Contact = () => {
           rows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          InputLabelProps={{ style: { color: '#ffffff' } }}
+          InputLabelProps={{ style: { color: "#ffffff" } }}
           InputProps={{
-            style: { color: '#ffffff' },
+            style: { color: "#ffffff" },
             sx: {
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#FFFFFF", 
+                  borderColor: "#FFFFFF",
                 },
                 "&:hover fieldset": {
-                  borderColor: "#A8DADC", 
+                  borderColor: "#A8DADC",
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "#FFFFFF", 
+                  borderColor: "#FFFFFF",
                 },
               },
             },
           }}
         />
 
-        <Stack direction="row" spacing={2} justifyContent="center" marginTop={2}>
+        <Stack
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+          marginTop={2}
+        >
           <Button
             variant="contained"
             startIcon={<WhatsAppIcon />}

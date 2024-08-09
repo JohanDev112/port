@@ -6,7 +6,12 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <Box bgcolor={'#070F21'} display="flex" flexDirection="column" minHeight="100vh">
+    <Box
+      bgcolor={"#070F21"}
+      display="flex"
+      flexDirection="column"
+      minHeight="100vh"
+    >
       {/* Navbar */}
       <Stack padding={10} flexGrow={1}>
         <Profile />

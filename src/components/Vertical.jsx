@@ -10,12 +10,13 @@ import { Button, Box } from "@mui/material";
 const Vertical = () => {
   return (
     <VerticalTimeline lineColor="#c2c2c2">
+      {/* Trabajo */}
       <VerticalTimelineElement
         className="vertical-timeline-element--work "
-        contentStyle={{ background: "#535C91", color: "#fff" }}
+        contentStyle={{ background: "#1F2A48", color: "#fff" }}
         contentArrowStyle={{ borderRight: "7px solid" }}
         date="2023 - presente"
-        iconStyle={{ background: "#535C91", color: "#fff" }}
+        iconStyle={{ background: "#1F2A48", color: "#fff" }}
         icon={<MdOutlineWork />}
       >
         <h3 className="vertical-timeline-element-title font-extrabold">
@@ -34,12 +35,13 @@ const Vertical = () => {
         </ul>
       </VerticalTimelineElement>
 
+      {/* E-Commerce */}
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: "#535C91", color: "#fff" }}
+        contentStyle={{ background: "#1F2A48", color: "#fff" }}
         contentArrowStyle={{ borderRight: "7px solid" }}
         date="2023"
-        iconStyle={{ background: "#535C91", color: "#fff" }}
+        iconStyle={{ background: "#1F2A48", color: "#fff" }}
         icon={<MdOutlineWork />}
       >
         <h3 className="vertical-timeline-element-title font-extrabold">
@@ -73,12 +75,35 @@ const Vertical = () => {
         </Box>
       </VerticalTimelineElement>
 
+      {/* App Móvil */}
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: "#535C91", color: "#fff" }}
+        contentStyle={{ background: "#1F2A48", color: "#fff" }}
+        contentArrowStyle={{ borderRight: "7px solid" }}
+        date="2023"
+        iconStyle={{ background: "#1F2A48", color: "#fff" }}
+        icon={<MdOutlineWork />}
+      >
+        <h3 className="vertical-timeline-element-title font-extrabold">
+          App Siniestros
+        </h3>
+        <h4 className="vertical-timeline-element-subtitle">Hidalgo, MX</h4>
+        <p>
+          Desarrollo de una aplicación móvil para reportar siniestros. <br />
+          Se usó la API de Google Drive para subir los documentos y fotos
+          generadas al momento de registrar o actualizar siniestros <br />
+          Tecnologías usadas: Expo, Express, React Native, PostgreSQL, Neontech,
+          Google Console.
+        </p>
+      </VerticalTimelineElement>
+
+      {/* Educación */}
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: "#1F2A48", color: "#fff" }}
         contentArrowStyle={{ borderRight: "7px solid" }}
         date="2021 - presente"
-        iconStyle={{ background: "#535C91", color: "#fff" }}
+        iconStyle={{ background: "#1F2A48", color: "#fff" }}
         icon={<IoSchoolSharp />}
       >
         <h3 className="vertical-timeline-element-title font-extrabold">

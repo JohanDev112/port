@@ -18,7 +18,8 @@ const Footer = () => {
     >
       {/* Derechos reservados */}
       <Typography variant="body2" marginBottom={{ xs: 2, sm: 0 }}>
-        © {new Date().getFullYear()} Johan González. Todos los derechos reservados.
+        © {new Date().getFullYear()} Johan González. Todos los derechos
+        reservados.
       </Typography>
 
       {/* Redes Sociales */}
@@ -33,7 +34,7 @@ const Footer = () => {
             transition: "transform 0.3s, background-color 0.3s",
             "&:hover": {
               backgroundColor: "#0A66C220",
-              transform: "scale(1.2)", 
+              transform: "scale(1.2)",
             },
           }}
         >
@@ -50,7 +51,7 @@ const Footer = () => {
             transition: "transform 0.3s, background-color 0.3s",
             "&:hover": {
               backgroundColor: "#E4405F20",
-              transform: "scale(1.2)", 
+              transform: "scale(1.2)",
             },
           }}
         >
@@ -67,7 +68,7 @@ const Footer = () => {
             transition: "transform 0.3s, background-color 0.3s",
             "&:hover": {
               backgroundColor: "#FFFFFF20",
-              transform: "scale(1.2)", 
+              transform: "scale(1.2)",
             },
           }}
         >
