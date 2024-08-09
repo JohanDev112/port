@@ -56,13 +56,13 @@ const Contact = () => {
             sx: {
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#FFFFFF", // Contorno blanco por defecto
+                  borderColor: "#FFFFFF", 
                 },
                 "&:hover fieldset": {
-                  borderColor: "#A8DADC", // Contorno más claro en hover
+                  borderColor: "#A8DADC", 
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "#FFFFFF", // Contorno blanco en focus
+                  borderColor: "#FFFFFF", 
                 },
               },
             },
@@ -81,13 +81,13 @@ const Contact = () => {
             sx: {
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#FFFFFF", // Contorno blanco por defecto
+                  borderColor: "#FFFFFF", 
                 },
                 "&:hover fieldset": {
-                  borderColor: "#A8DADC", // Contorno más claro en hover
+                  borderColor: "#A8DADC", 
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "#FFFFFF", // Contorno blanco en focus
+                  borderColor: "#FFFFFF", 
                 },
               },
             },
@@ -108,13 +108,13 @@ const Contact = () => {
             sx: {
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#FFFFFF", // Contorno blanco por defecto
+                  borderColor: "#FFFFFF", 
                 },
                 "&:hover fieldset": {
-                  borderColor: "#A8DADC", // Contorno más claro en hover
+                  borderColor: "#A8DADC", 
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "#FFFFFF", // Contorno blanco en focus
+                  borderColor: "#FFFFFF", 
                 },
               },
             },
