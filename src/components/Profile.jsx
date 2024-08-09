@@ -3,26 +3,25 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import foto from "/foto.jpeg";
-import { ThemeProvider, createTheme, useTheme } from "@mui/material/styles";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
-  components: {
-    MuiIconButton: {
-      styleOverrides: {
-        root: {
-          transition: "transform 0.3s, background-color 0.3s",
-          "&:hover": {
-            backgroundColor: "#00000020",
-            transform: "scale(1.2)",
+const Profile = () => {
+
+  const theme = createTheme({
+    components: {
+      MuiIconButton: {
+        styleOverrides: {
+          root: {
+            transition: "transform 0.3s, background-color 0.3s",
+            "&:hover": {
+              backgroundColor: "#00000020",
+              transform: "scale(1.2)",
+            },
           },
         },
       },
     },
-  },
-});
-
-const Profile = () => {
-  const theme = useTheme();
+  });
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
