@@ -1,9 +1,9 @@
-import { Avatar, Box, Typography, Stack, IconButton } from "@mui/material";
+import { Avatar, Box, Typography, Stack, IconButton, useMediaQuery } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import foto from "/foto.jpeg";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider, createTheme, useTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   components: {
@@ -22,11 +22,14 @@ const theme = createTheme({
 });
 
 const Profile = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <ThemeProvider theme={theme}>
       <Box
         display="flex"
-        flexDirection={{ xs: "column", sm: "row" }}
+        flexDirection={{ xs: "column", md: "row" }}
         justifyContent="center"
         alignItems="center"
         marginX="auto"
@@ -34,21 +37,33 @@ const Profile = () => {
         bgcolor="#1F2A48"
         borderRadius={2}
         color={"#FFFFFF"}
-        maxWidth={{ xs: "100%", sm: "80%" }}
-        textAlign={{ xs: "center", sm: "left" }}
+        maxWidth={{ xs: "95%", sm: "90%", md: "80%" }}
+        textAlign={{ xs: "center", md: "left" }}
       >
-        <Box margin={{ xs: 2, sm: 0 }} marginLeft={{ sm: 3 }}>
+        <Box margin={{ xs: 2, md: 0 }} marginRight={{ md: 4 }}>
           <Avatar
             src={foto}
-            sx={{ width: 150, height: 150, marginBottom: { xs: 2, sm: 0 } }}
+            sx={{ 
+              width: { xs: 120, sm: 150 }, 
+              height: { xs: 120, sm: 150 }, 
+              marginBottom: { xs: 2, md: 0 } 
+            }}
           />
         </Box>
 
-        <Stack padding={3} spacing={2} maxWidth="60%">
-          <Typography variant="h5" gutterBottom>
+        <Stack padding={{ xs: 1, sm: 2, md: 3 }} spacing={2} maxWidth={{ xs: "100%", md: "60%" }}>
+          <Typography 
+            variant={isMobile ? "h5" : "h4"} 
+            gutterBottom
+            fontWeight="semibold"
+          >
             Johan González
           </Typography>
-          <Typography variant="body1" align="justify" gutterBottom>
+          <Typography 
+            variant={isMobile ? "body2" : "body1"} 
+            align={isMobile ? "center" : "justify"} 
+            gutterBottom
+          >
             Estudiante de Ingeniería de software con conocimiento en desarrollo
             de aplicaciones y web donde utilizo tecnologías modernas como React,
             NextJS, Expo y React Native donde TypeScript es mi lenguaje
@@ -57,7 +72,7 @@ const Profile = () => {
 
           <Box
             display="flex"
-            justifyContent={{ xs: "center", sm: "flex-start" }}
+            justifyContent={{ xs: "center", md: "flex-start" }}
             marginTop={2}
           >
             <IconButton
@@ -66,7 +81,7 @@ const Profile = () => {
               rel="noopener noreferrer"
               sx={{ color: "#0A66C2" }}
             >
-              <LinkedInIcon />
+              <LinkedInIcon fontSize={isMobile ? "small" : "medium"} />
             </IconButton>
             <IconButton
               aria-label="Instagram"
@@ -76,7 +91,7 @@ const Profile = () => {
               rel="noopener noreferrer"
               sx={{ color: "#E4405F" }}
             >
-              <InstagramIcon />
+              <InstagramIcon fontSize={isMobile ? "small" : "medium"} />
             </IconButton>
             <IconButton
               aria-label="GitHub"
@@ -86,7 +101,7 @@ const Profile = () => {
               rel="noopener noreferrer"
               sx={{ color: "#FFFFFF" }}
             >
-              <GitHubIcon />
+              <GitHubIcon fontSize={isMobile ? "small" : "medium"} />
             </IconButton>
           </Box>
         </Stack>
