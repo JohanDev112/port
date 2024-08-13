@@ -26,7 +26,7 @@ const Footer = () => {
       <Stack direction="row" spacing={2}>
         <IconButton
           aria-label="LinkedIn"
-          href="https://www.linkedin.com/"
+          href="https://www.linkedin.com/in/johangon112/"
           target="_blank"
           rel="noopener noreferrer"
           sx={{
@@ -43,7 +43,7 @@ const Footer = () => {
 
         <IconButton
           aria-label="Instagram"
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/tamalitos.de.elote"
           target="_blank"
           rel="noopener noreferrer"
           sx={{
@@ -60,7 +60,7 @@ const Footer = () => {
 
         <IconButton
           aria-label="GitHub"
-          href="https://github.com/"
+          href="https://github.com/johandev112"
           target="_blank"
           rel="noopener noreferrer"
           sx={{

@@ -76,29 +76,50 @@ const Profile = () => {
           >
             <IconButton
               aria-label="LinkedIn"
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/johangon112/"
               rel="noopener noreferrer"
-              sx={{ color: "#0A66C2" }}
+              sx={{
+                color: "#0A66C2",
+                transition: "transform 0.3s, background-color 0.3s",
+                "&:hover": {
+                  backgroundColor: "#0A66C220",
+                  transform: "scale(1.2)",
+                },
+              }}
             >
               <LinkedInIcon fontSize={isMobile ? "small" : "medium"} />
             </IconButton>
             <IconButton
               aria-label="Instagram"
               component="a"
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/tamalitos.de.elote"
               target="_blank"
               rel="noopener noreferrer"
-              sx={{ color: "#E4405F" }}
+              sx={{
+                color: "#E4405F",
+                transition: "transform 0.3s, background-color 0.3s",
+                "&:hover": {
+                  backgroundColor: "#E4405F20",
+                  transform: "scale(1.2)",
+                },
+              }}
             >
               <InstagramIcon fontSize={isMobile ? "small" : "medium"} />
             </IconButton>
             <IconButton
               aria-label="GitHub"
               component="a"
-              href="https://github.com/"
+              href="https://github.com/johandev112"
               target="_blank"
               rel="noopener noreferrer"
-              sx={{ color: "#FFFFFF" }}
+              sx={{
+                color: "#FFFFFF",
+                transition: "transform 0.3s, background-color 0.3s",
+                "&:hover": {
+                  backgroundColor: "#FFFFFF20",
+                  transform: "scale(1.2)",
+                },
+              }}
             >
               <GitHubIcon fontSize={isMobile ? "small" : "medium"} />
             </IconButton>
