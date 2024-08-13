@@ -1,37 +1,50 @@
 import { useState } from "react";
-import { Box, IconButton, TextField, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import EmailIcon from "@mui/icons-material/Email";
+import { Box, TextField, Button, Stack, Typography } from "@mui/material";
+import emailjs from "emailjs-com";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const handleWhatsApp = () => {
-    const whatsappMessage = `Hola, soy ${name}. ${message}`;
-    window.open(
-      `https://wa.me/5543670010?text=${encodeURIComponent(whatsappMessage)}`,
-      "_blank"
-    );
-  };
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const handleEmail = () => {
-    const mailtoLink = `mailto:johangonzalez112@gmail.com?subject=Contacto&body=${encodeURIComponent(
-      `Hola, soy ${name}. ${message}`
-    )}`;
-    window.open(mailtoLink, "_blank");
-  };
+    if (!name || !email || !message) {
+      toast.error("Por favor, completa todos los campos antes de enviar.", {
+        position: "top-center",
+      });
+      return;
+    }
 
-  const buttonStyles = {
-    width: isMobile ? '48px' : 'auto',
-    height: isMobile ? '48px' : 'auto',
-    minWidth: isMobile ? '48px' : '64px',
-    borderRadius: isMobile ? '50%' : '4px',
-    padding: isMobile ? '12px' : '6px 16px',
-    fontSize: isMobile ? '0.75rem' : '1rem', // Tamaño de fuente ajustado
+    const templateParams = {
+      user_name: name,
+      user_email: email,
+      message: message,
+    };
+
+    emailjs
+      .send(
+        "service_hsr3kke", 
+        "template_dhwhagm", 
+        templateParams,
+        "nakCj7OnlVWVReTxp"
+      )
+      .then(() => {
+        toast.success("¡Correo enviado exitosamente!", {
+          position: "top-center",
+        });
+      })
+      .catch(() => {
+        toast.error(
+          "Hubo un error al enviar el correo. Por favor, verifica tu conexión e inténtalo de nuevo.",
+          {
+            position: "top-center",
+          }
+        );
+      });
   };
 
   return (
@@ -39,13 +52,15 @@ const Contact = () => {
       component="form"
       sx={{
         marginTop: 4,
-        padding: 3,
+        padding: 4,
         bgcolor: "#1F2A48",
         borderRadius: 2,
         color: "#FFFFFF",
-        maxWidth: { xs: "100%", sm: "80%" },
+        maxWidth: { xs: "90%", md: "70%", lg: "60%" },
+        width: "90%",
         marginX: "auto",
       }}
+      onSubmit={sendEmail}
     >
       <Typography variant="h6" marginBottom={2} textAlign="center">
         Contacto
@@ -128,54 +143,23 @@ const Contact = () => {
             },
           }}
         />
-
-        <Stack
-          direction="row"
-          spacing={2}
-          justifyContent="center"
-          marginTop={2}
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            bgcolor: "#25D366",
+            color: "#FFFFFF",
+            "&:hover": {
+              bgcolor: "#1EBF57",
+            },
+            maxWidth: { xs: "100%", sm: "200px" }, 
+            width: "100%", 
+            alignSelf: "center", 
+          }}
         >
-          <IconButton
-            onClick={handleWhatsApp}
-            sx={{
-              ...buttonStyles,
-              bgcolor: "#25D366",
-              color: "#FFFFFF",
-              "&:hover": {
-                bgcolor: "#1EBF57",
-                transform: "scale(1.05)",
-                transition: "transform 0.3s",
-              },
-            }}
-          >
-            <WhatsAppIcon />
-            {!isMobile && (
-              <Typography sx={{ fontSize: buttonStyles.fontSize, ml: 1 }}>
-                WhatsApp
-              </Typography>
-            )}
-          </IconButton>
-          <IconButton
-            onClick={handleEmail}
-            sx={{
-              ...buttonStyles,
-              bgcolor: "#D44638",
-              color: "#FFFFFF",
-              "&:hover": {
-                bgcolor: "#C1351A",
-                transform: "scale(1.05)",
-                transition: "transform 0.3s",
-              },
-            }}
-          >
-            <EmailIcon />
-            {!isMobile && (
-              <Typography sx={{ fontSize: buttonStyles.fontSize, ml: 1 }}>
-                Correo Electrónico
-              </Typography>
-            )}
-          </IconButton>
-        </Stack>
+          Enviar
+        </Button>
+        <ToastContainer position="top-right" />
       </Stack>
     </Box>
   );
