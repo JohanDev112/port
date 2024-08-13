@@ -78,6 +78,7 @@ const Profile = () => {
               aria-label="LinkedIn"
               href="https://www.linkedin.com/in/johangon112/"
               rel="noopener noreferrer"
+              target="_blank"
               sx={{
                 color: "#0A66C2",
                 transition: "transform 0.3s, background-color 0.3s",
@@ -91,7 +92,6 @@ const Profile = () => {
             </IconButton>
             <IconButton
               aria-label="Instagram"
-              component="a"
               href="https://www.instagram.com/tamalitos.de.elote"
               target="_blank"
               rel="noopener noreferrer"
