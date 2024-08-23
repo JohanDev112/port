@@ -1,4 +1,11 @@
-import { Avatar, Box, Typography, Stack, IconButton, useMediaQuery } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Typography,
+  Stack,
+  IconButton,
+  useMediaQuery,
+} from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -6,7 +13,6 @@ import foto from "/foto.jpeg";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const Profile = () => {
-
   const theme = createTheme({
     components: {
       MuiIconButton: {
@@ -22,7 +28,7 @@ const Profile = () => {
       },
     },
   });
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,25 +48,29 @@ const Profile = () => {
         <Box margin={{ xs: 2, md: 0 }} marginRight={{ md: 4 }}>
           <Avatar
             src={foto}
-            sx={{ 
-              width: { xs: 120, sm: 150 }, 
-              height: { xs: 120, sm: 150 }, 
-              marginBottom: { xs: 2, md: 0 } 
+            sx={{
+              width: { xs: 120, sm: 150 },
+              height: { xs: 120, sm: 150 },
+              marginBottom: { xs: 2, md: 0 },
             }}
           />
         </Box>
 
-        <Stack padding={{ xs: 1, sm: 2, md: 3 }} spacing={2} maxWidth={{ xs: "100%", md: "60%" }}>
-          <Typography 
-            variant={isMobile ? "h5" : "h4"} 
+        <Stack
+          padding={{ xs: 1, sm: 2, md: 3 }}
+          spacing={2}
+          maxWidth={{ xs: "100%", md: "60%" }}
+        >
+          <Typography
+            variant={isMobile ? "h5" : "h4"}
             gutterBottom
             fontWeight="semibold"
           >
             Johan González
           </Typography>
-          <Typography 
-            variant={isMobile ? "body2" : "body1"} 
-            align={isMobile ? "center" : "justify"} 
+          <Typography
+            variant={isMobile ? "body2" : "body1"}
+            align={isMobile ? "center" : "justify"}
             gutterBottom
           >
             Estudiante de Ingeniería de software con conocimiento en desarrollo
